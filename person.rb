@@ -4,7 +4,7 @@ class Person
     attr_reader :id 
 
     # constructor
-    def initialize(name, age, parent_permission)
+    def initialize(name = 'Unknow', age, parent_permission: true)
    
     end 
     
