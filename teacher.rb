@@ -1,3 +1,3 @@
-class Teacher
+class Teacher < Person
 
 end
