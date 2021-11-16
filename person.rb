@@ -20,5 +20,10 @@ class Person
     of_age? || parent_permission == true
   end
 
+  def validate_name
+    validate = @corrector
+    @name = validate.correct_name(@name)
+  end
+
   private :of_age?
 end
