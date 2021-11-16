@@ -1,3 +1,5 @@
+require './corrector'
+
 class Person
   # variables
   attr_accessor :name, :age
