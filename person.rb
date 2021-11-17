@@ -2,11 +2,11 @@ require './corrector'
 
 class Person
   # variables
-  attr_accessor :name, :age
-  attr_reader :id, :rentals
+  attr_accessor :name, :age, :rentals
+  attr_reader :id
 
   # constructor
-  def initialize(age, name = 'Unknow', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission = true)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -15,8 +15,8 @@ class Person
     @rentals = []
   end
 
-  def add_rental(rental)
-    @rentals.push(rental)
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   def of_age?
