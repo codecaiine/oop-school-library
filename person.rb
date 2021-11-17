@@ -3,7 +3,7 @@ require './corrector'
 class Person
   # variables
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rentals
 
   # constructor
   def initialize(age, name = 'Unknow', parent_permission: true)
@@ -12,7 +12,13 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @corrector = Corrector.new
+    @rentals = []
   end
+
+  def add_rental(rental)
+    @rentals.push(rental)
+  end
+
 
   def of_age?
     @age >= 18
