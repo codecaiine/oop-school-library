@@ -34,6 +34,3 @@ class Person
 
   private :of_age?
 end
-
-me = Person.new(14, 'yannick')
-p me.validate_name
