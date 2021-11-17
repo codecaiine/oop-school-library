@@ -2,7 +2,7 @@ require './corrector'
 
 class Person
   # variables
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   # constructor
@@ -12,6 +12,11 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @corrector = Corrector.new
+    @rentals = []
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   def of_age?
@@ -29,6 +34,3 @@ class Person
 
   private :of_age?
 end
-
-me = Person.new(14, 'yannick')
-p me.validate_name
