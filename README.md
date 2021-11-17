@@ -1,6 +1,6 @@
 # School Library
 
-In this project, I will start building my school library app. In this initial step, I will implement the classes to represent students and teachers.We work with  data from the SpaceX API.
+In this project, I will start building my school library app. In this initial step, I will implement the classes to represent students and teachers.
 
 ## Built 
 
