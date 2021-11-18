@@ -1,7 +1,9 @@
+# rubocop: disable Style/OptionalBooleanParameter
+
 class Teacher < Person
   # contructor
-  def initialize(specialization, name = 'unknown', parent_permission: true)
-    super(name, age, parent_permission)
+  def initialize(specialization, age, name = 'Unknown', parent_permission = true)
+    super(age, name, parent_permission)
     @specialization = specialization
   end
 
@@ -9,3 +11,5 @@ class Teacher < Person
     true
   end
 end
+
+# rubocop: enable Style/OptionalBooleanParameter
