@@ -1,3 +1,5 @@
+# rubocop: disable Style/OptionalBooleanParameter
+
 class Teacher < Person
   # contructor
   def initialize(specialization, age, name = 'Unknown', parent_permission = true)
@@ -9,3 +11,5 @@ class Teacher < Person
     true
   end
 end
+
+# rubocop: enable Style/OptionalBooleanParameter

@@ -1,3 +1,5 @@
+# rubocop: disable Style/OptionalBooleanParameter
+
 require './person'
 
 class Student < Person
@@ -18,3 +20,5 @@ class Student < Person
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
+
+# rubocop: enable Style/OptionalBooleanParameter

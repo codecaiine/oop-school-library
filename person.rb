@@ -1,3 +1,5 @@
+# rubocop: disable Style/OptionalBooleanParameter
+
 require './corrector'
 
 class Person
@@ -34,3 +36,5 @@ class Person
 
   private :of_age?
 end
+
+# rubocop: enable Style/OptionalBooleanParameter
