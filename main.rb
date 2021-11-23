@@ -12,6 +12,7 @@ class Main
   include App
 
   def initialize
+    @input = 0
     @people = []
     @books = []
     @rentals = []
@@ -40,25 +41,26 @@ class Main
   end
 
   def get_option(input)
-    case input
-    when '1'
+    case @input
+    when 1
       display_books
       start_message
-    when '2'
+    when 2
       display_people
       start_message
-    when '3'
-      add_a_person
-    when '4'
-      add_a_book
-    when '5'
-      add_a_rental
-    when '6'
-      list_rentals_by_person_id
-    when '7'
-      puts 'Thank you for using this app!'
+    when 3
+      user_person_input
+    when 4
+      user_book_input
+    when 5
+      user_rental_input unless @books.empty? && @people.empty?
+    when 6
+      user_rental_id_input unless @people.empty?
     else
-      puts 'Please enter a number between 1 and 7'
+      if @input != 7
+        puts 'Please enter a number between 1 and 7'
+        puts
+      end
     end
   end
 
