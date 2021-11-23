@@ -4,6 +4,7 @@ require './teacher'
 require './classroom'
 require './book'
 require './rental'
+require './app'
 
 # rubocop:disable Metrics
 
