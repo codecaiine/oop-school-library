@@ -1,7 +1,6 @@
 require 'module_rental'
 require 'module_person'
 require 'module_book'
-
 # rubocop:disable Metrics
 
 class Menu
@@ -44,14 +43,14 @@ class Menu
       get_option
     when 3
       puts 'Create a Person'
-      @person.handle_person
+      @person.mobule_person
       get_option
     when 4
       puts 'Create a book'
-      @book.create_book
+      @book.add_book
       get_option
     when 5
-      @rental.create_rental
+      @rental.add_rental
       get_option
     when 6
       @rental.display_rental
@@ -71,4 +70,4 @@ def main
     test.menu
   end
 # rubocop:enable Metrics
-main
+puts(main)
