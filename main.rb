@@ -62,7 +62,7 @@ class Main
     end
   end
 
-  
+
   def user_person_input
     decision = 0
     until [1, 2].include?(decision)
@@ -81,6 +81,20 @@ class Main
     name = gets.chomp
     create_person(decision, age, name)
   end
+
+  def user_book_input
+    puts 'Please, enter book information below:'
+    print 'Title --> '
+    title = gets.chomp
+    print 'Author --> '
+    author = gets.chomp
+    create_book(title, author)
+    puts
+    puts 'Book created successfully'
+    puts
+  end
+
+  
 
   def create_a_person
     print 'Do you want to create a student (1) or teacher (2) [Input a number]: '
