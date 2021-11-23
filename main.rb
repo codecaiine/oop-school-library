@@ -64,7 +64,6 @@ class Main
     end
   end
 
-
   def user_person_input
     decision = 0
     until [1, 2].include?(decision)
@@ -96,7 +95,6 @@ class Main
     puts
   end
 
-  
   def user_rental_input
     puts 'Select a book from the following list:'
     display_books
@@ -113,47 +111,47 @@ class Main
     add_rental(book_index, person_index, date)
     puts 'Rental added successfully'
     puts
-end
-
-def user_rental_id_input
-  loop do
-    print 'Enter the person\'s ID --> '
-    display_people
-    person_input = gets.chomp.to_i
-    display_rentals(person_input)
-    break if person_input
   end
-end
 
-def add_student_input(age, name)
-  print 'Has parent permission? [Y/N] --> '
-  permission = gets.chomp.upcase
-  permission = permission != 'N'
-  add_student(age, name, permission)
-  puts 'Student added successfully'
-  puts
-end
+  def user_rental_id_input
+    loop do
+      print 'Enter the person\'s ID --> '
+      display_people
+      person_input = gets.chomp.to_i
+      display_rentals(person_input)
+      break if person_input
+    end
+  end
 
-def add_teacher_input(age, name)
-  print 'Specialty --> '
-  specialty = gets.chomp
-  add_teacher(specialty, age, name)
-  puts
-  puts 'Teacher added successfully'
-  puts
-end
-
-def main
-  until @input == 7
-    menu
-    @input = gets.chomp.to_i
+  def add_student_input(age, name)
+    print 'Has parent permission? [Y/N] --> '
+    permission = gets.chomp.upcase
+    permission = permission != 'N'
+    add_student(age, name, permission)
+    puts 'Student added successfully'
     puts
-    get_option
   end
-  save_json
-  puts 'Exiting session'
-  puts 'Good bye!'
-end
+
+  def add_teacher_input(age, name)
+    print 'Specialty --> '
+    specialty = gets.chomp
+    add_teacher(specialty, age, name)
+    puts
+    puts 'Teacher added successfully'
+    puts
+  end
+
+  def main
+    until @input == 7
+      menu
+      @input = gets.chomp.to_i
+      puts
+      get_option
+    end
+    save_json
+    puts 'Exiting session'
+    puts 'Good bye!'
+  end
 end
 
 # rubocop:enable Metrics
