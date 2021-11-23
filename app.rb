@@ -51,6 +51,21 @@ class App
           enter_msg
         end
     end
+
+    private
+
+    def create_student(age, name, permission)
+        @people << Student.new(age, name, permission)
+        puts 'Student created successfully'
+        puts
+    end
+
+    def create_teacher(age, name, specialty)
+        @people << Teacher.new(specialty, age, name)
+        puts
+        puts 'Teacher created successfully'
+        puts
+    end
     
 
 end
