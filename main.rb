@@ -1,6 +1,6 @@
-require 'module_rental'
-require 'module_person'
-require 'module_book'
+require './modulerental'
+require './module_person'
+require './module_book'
 # rubocop:disable Metrics
 
 class Menu
@@ -27,47 +27,46 @@ class Menu
     puts '7 - Exit'
     option = gets.chomp
 
-    get_option option
+    list_option option
   end
 
-  def get_option
-  display_option
-  input = gets.chomp.to_i
+  def list_option
+    display_option
+    input = gets.chomp.to_i
 
     case input
     when 1
       @book.display_books
-      get_option
+      list_option
     when 2
       @person.display_person
-      get_option
+      list_option
     when 3
       puts 'Create a Person'
       @person.mobule_person
-      get_option
+      list_option
     when 4
       puts 'Create a book'
       @book.add_book
-      get_option
+      list_option
     when 5
       @rental.add_rental
-      get_option
+      list_option
     when 6
       @rental.display_rental
-      get_option
+      list_option
     else
       puts 'Thanks for using this app!'
     end
   end
-
-  
+end
 
 def main
-    puts 'Welcome to School Library App!'
-  
-    puts
-    test = Menu.new
-    test.menu
-  end
+  puts 'Welcome to School Library App!'
+
+  puts
+  test = Menu.new
+  test.list_option
+end
 # rubocop:enable Metrics
 puts(main)
