@@ -24,6 +24,13 @@ class App
         end
         puts
     end
+
+    def create_book(title, author)
+        @books << Book.new(title, author)
+        puts
+        puts 'Book created successfully'
+        puts
+    end
     
 
 end
