@@ -42,9 +42,11 @@ class Main
   def get_option(input)
     case input
     when '1'
-      list_all_books
+      display_books
+      start_message
     when '2'
-      list_all_people
+      display_people
+      start_message
     when '3'
       create_a_person
     when '4'
