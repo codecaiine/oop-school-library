@@ -1,9 +1,9 @@
 module App
     INPT_MSG = 'Enter an option number here --> '.freeze
-    ENTR_MSG = 'Press ENTER to continue'.freeze
+    START_MSG = 'Press ENTER to continue'.freeze
   
-    def enter_msg
-      print ENTR_MSG
+    def start_message
+      print START_MSG
       gets
       puts
     end
@@ -23,7 +23,7 @@ module App
         end
     end
 
-    def create_person(decision, age, name)
+    def add_person(decision, age, name)
         case decision
         when 1
           create_student_input(age, name)
@@ -33,14 +33,14 @@ module App
         puts
     end
 
-    def create_book(title, author)
+    def add_book(title, author)
         @books << Book.new(title, author)
         puts
         puts 'Book created successfully'
         puts
     end
 
-    def create_rental(book_index, person_index, date)
+    def add_rental(book_index, person_index, date)
         Rental.new(date, @books[book_index], @people[person_index])
         puts 'Rental created successfully'
         puts
@@ -62,13 +62,13 @@ module App
 
     private
 
-    def create_student(age, name, permission)
+    def add_student(age, name, permission)
         @people << Student.new(age, name, permission)
         puts 'Student created successfully'
         puts
     end
 
-    def create_teacher(age, name, specialty)
+    def add_teacher(age, name, specialty)
         @people << Teacher.new(specialty, age, name)
         puts
         puts 'Teacher created successfully'
