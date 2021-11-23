@@ -8,13 +8,14 @@ module App
       puts
     end
 
-
+  # list_all_books
     def display_books
         puts 'List of books:'
         puts 'EMPTY' if @books.empty?
         @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     end
-
+  
+    #list_all_people
     def display_people
         puts 'List of people:'
         puts 'EMPTY' if @people.empty?
@@ -23,6 +24,7 @@ module App
         end
     end
 
+    #create_a_person
     def add_person(decision, age, name)
         case decision
         when 1
@@ -32,13 +34,13 @@ module App
         end
         puts
     end
-
+   #create_a_rental
     def add_rental(book_index, person_index, date)
         Rental.new(date, @books[book_index], @people[person_index])
         puts 'Rental created successfully'
         puts
     end
-
+   
     def display_rentals(person_input)
         renter = @people.select { |person| person.id == (person_input) }
         if renter.empty?
