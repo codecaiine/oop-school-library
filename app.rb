@@ -15,4 +15,15 @@ class App
         end
     end
 
+    def create_person(decision, age, name)
+        case decision
+        when 1
+          create_student_input(age, name)
+        else
+          create_teacher_input(age, name)
+        end
+        puts
+    end
+    
+
 end
