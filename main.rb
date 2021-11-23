@@ -62,20 +62,6 @@ class Main
     end
   end
 
-  def list_all_books
-    puts 'There are no books yet! Kindly add books.' if @books.empty?
-
-    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
-    sleep 0.75
-    menu
-  end
-
-  def list_all_people
-    puts 'There are no people yet! Kindly add a student or teacher.' if @people.empty?
-    @people.map { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
-    sleep 0.75
-    menu
-  end
 
   def create_a_person
     print 'Do you want to create a student (1) or teacher (2) [Input a number]: '
