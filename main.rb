@@ -95,6 +95,26 @@ class Main
   end
 
   
+  def user_rental_input
+    puts 'Select a book from the following list:'
+    display_books
+    print INPT_MSG
+    book_index = gets.chomp.to_i
+    puts
+    puts 'Select a person form the following list:'
+    display_people
+    print INPT_MSG
+    person_index = gets.chomp.to_i
+    puts
+    print 'Enter date of retrieval --> '
+    date = gets.chomp
+    create_rental(book_index, person_index, date)
+    puts 'Rental created successfully'
+    puts
+end
+
+
+
 
   def create_a_person
     print 'Do you want to create a student (1) or teacher (2) [Input a number]: '
