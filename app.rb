@@ -37,6 +37,20 @@ class App
         puts 'Rental created successfully'
         puts
     end
+
+    def display_rentals(person_input)
+        renter = @people.select { |person| person.id == (person_input) }
+        if renter.empty?
+          puts 'No rentals found for this ID'
+          user_rental_id_input
+        else
+          puts renter
+          puts "Rentals of #{renter.first.name}:"
+          puts 'EMPTY' if renter.first.rentals.empty?
+          puts(renter.first.rentals.map { |rental| "Book: #{rental.book.title}, Rented on: #{rental.date}" })
+          enter_msg
+        end
+    end
     
 
 end
