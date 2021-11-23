@@ -40,7 +40,7 @@ class Main
     get_option option
   end
 
-  def get_option(input)
+  def get_option
     case @input
     when 1
       display_books
@@ -144,8 +144,17 @@ def add_teacher_input(age, name)
 end
 
 def main
-  app = App.new
-  app.run
+  until @input == 7
+    menu
+    @input = gets.chomp.to_i
+    puts
+    get_option
+  end
+  save_json
+  puts 'Exiting session'
+  puts 'Good bye!'
 end
+end
+
 # rubocop:enable Metrics
-main
+Main.new.main
