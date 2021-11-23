@@ -31,6 +31,12 @@ class App
         puts 'Book created successfully'
         puts
     end
+
+    def create_rental(book_index, person_index, date)
+        Rental.new(date, @books[book_index], @people[person_index])
+        puts 'Rental created successfully'
+        puts
+    end
     
 
 end
