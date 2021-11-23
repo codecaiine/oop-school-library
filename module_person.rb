@@ -12,19 +12,19 @@ class ModulePerson
     print 'Specialization: '
     specialization = gets.chomp
     @persons.push(Teacher.new(age: age, specialization: specialization, name: name))
-    puts('Person added successfully!')
+    puts('Person has been added successfully!')
   end
 
   def add_student
     name, age = name_and_age
-    print 'Has parents permission? [Y/N]:  '
+    print 'Do you have parents permission? [Y/N]:  '
     parent_permission = gets.chomp != 'n'
     @persons.push(Student.new(age: age, classroom: 'Coding Class', name: name, parent_permission: parent_permission))
-    puts('Person added successfully!')
+    puts('Person has been added successfully!')
   end
 
-  def Module_person
-    print 'Do you want to add a student(1) or a teacher(2)? [Input the number]: '
+  def mod_person
+    print 'Do you want to add a student(1) or a teacher(2)? [Enter a number]: '
     choice = gets.chomp.to_i
     case choice
     when 1

@@ -1,7 +1,7 @@
 require 'pry'
-require 'rental'
-require 'module_book'
-require 'module_person'
+require_relative 'rental'
+require_relative 'module_book'
+require_relative 'module_person'
 
 class ModuleRentals
   attr_accessor :rentals
@@ -12,14 +12,14 @@ class ModuleRentals
     @persons = params[:persons]
   end
 
-  def create_rental
-    puts 'Select a book from the following list: '
+  def add_rental
+    puts 'Select a book here: '
 
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     select_book = gets.chomp.to_i
     book = @books[select_book]
 
-    puts 'Select a person from the following list: '
+    puts 'Select a person here: '
     @persons.each_with_index do |person, index|
       puts "#{index}) [#{person.class.name.split('::').last}],
         Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
@@ -31,7 +31,7 @@ class ModuleRentals
     date = gets.chomp
 
     @rentals.push(Rental.new(date: date, person: person, book: book))
-    puts 'Rental created successfully'
+    puts 'Rental has been created successfully'
   end
 
   def display_rental

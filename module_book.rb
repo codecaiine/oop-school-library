@@ -10,11 +10,11 @@ class ModuleBooks
     print 'Author: '
     author = gets.chomp
     @books.push(Book.new(title: title, author: author))
-    puts 'Book added'
+    puts 'Book has been added'
   end
 
   def display_books
-    puts 'All books are: '
+    puts 'All books added: '
     @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
   end
 end

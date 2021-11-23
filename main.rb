@@ -1,13 +1,13 @@
-require './modulerental'
-require './module_person'
-require './module_book'
+require_relative 'module_rental'
+require_relative 'module_person'
+require_relative 'module_book'
 # rubocop:disable Metrics
 
 class Menu
   attr_accessor :persons, :books
 
   def initialize
-    @people = []
+    @persons = []
     @books = []
     @rentals = []
     @rental = ModuleRentals.new({ rentals: @rentals, persons: @persons, books: @books })
@@ -15,48 +15,45 @@ class Menu
     @book = ModuleBooks.new(@books)
   end
 
-  def display_option
-    puts
-    puts 'Please choose an option by entering a number'
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person id'
-    puts '7 - Exit'
-    option = gets.chomp
-
-    list_option option
+  def select_option
+    puts 'Please select an option enter a number:'
+    choose_options = %(
+      1- List all book
+      2- List all People
+      3- Create a Person
+      4- Create a Book
+      5- Create a Rental
+      6- List all Rentals for given id
+      7- Exit).split('\n')
+    choose_options.map { |choose| puts choose }
   end
 
-  def list_option
-    display_option
-    input = gets.chomp.to_i
-
-    case input
+  def menu
+    select_option
+    options = gets.chomp.to_i
+    case options
     when 1
       @book.display_books
-      list_option
+      menu
     when 2
       @person.display_person
-      list_option
+      menu
     when 3
       puts 'Create a Person'
-      @person.mobule_person
-      list_option
+      @person.mod_person
+      menu
     when 4
       puts 'Create a book'
       @book.add_book
-      list_option
+      menu
     when 5
       @rental.add_rental
-      list_option
+      menu
     when 6
       @rental.display_rental
-      list_option
+      menu
     else
-      puts 'Thanks for using this app!'
+      puts 'Goodbye !'
     end
   end
 end
@@ -66,7 +63,7 @@ def main
 
   puts
   test = Menu.new
-  test.list_option
+  test.menu
 end
 # rubocop:enable Metrics
 puts(main)
