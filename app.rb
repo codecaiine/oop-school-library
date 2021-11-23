@@ -33,13 +33,6 @@ module App
         puts
     end
 
-    def add_book(title, author)
-        @books << Book.new(title, author)
-        puts
-        puts 'Book created successfully'
-        puts
-    end
-
     def add_rental(book_index, person_index, date)
         Rental.new(date, @books[book_index], @people[person_index])
         puts 'Rental created successfully'
