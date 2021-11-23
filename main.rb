@@ -8,7 +8,9 @@ require './app'
 
 # rubocop:disable Metrics
 
-class App
+class Main
+  include App
+
   def initialize
     @people = []
     @books = []

@@ -1,4 +1,12 @@
-class App
+module App
+    INPT_MSG = 'Enter an option number here --> '.freeze
+    ENTR_MSG = 'Press ENTER to continue'.freeze
+  
+    def enter_msg
+      print ENTR_MSG
+      gets
+      puts
+    end
 
 
     def display_books
