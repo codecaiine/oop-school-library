@@ -1,4 +1,4 @@
-require './book'
+require_relative './book'
 class ModuleBooks
   def initialize(arg)
     @books = arg
