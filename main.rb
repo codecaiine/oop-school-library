@@ -1,6 +1,7 @@
 require_relative 'module_rental'
 require_relative 'module_person'
 require_relative 'module_book'
+require_relative 'preserve_data'
 # rubocop:disable Metrics
 
 class Menu

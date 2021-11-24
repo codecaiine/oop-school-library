@@ -72,7 +72,6 @@ class Storage
       JSON.parse(File.read(file)).map do |rental|
         person = persons.detect { |p| p.id.eql?(rental['person']['id']) }
         book = books.detect { |b| b.title.eql?(rental['book']['title']) }
-        # Rental.new({ date: rental['date'], book: book, person: person })
         Rental.new(rental['date'], person, book)
       end
     else
