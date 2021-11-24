@@ -17,7 +17,7 @@ To get a local copy up and running follow these simple steps.
 ## Installation
 Clone the repo and run `bundle install` in the command line to install the dependencies, then run `console.rb`
 
-## Author
+## Authors
 
 👤 **Yannick-Noel AKA**
 
@@ -25,6 +25,12 @@ Clone the repo and run `bundle install` in the command line to install the depen
 - GitHub: [@codecaiine](https://github.com/codecaiine)
 - Twitter: [@yannicknaka](https://twitter.com/yannicknaka)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yannick-no%C3%ABl-aka/)
+
+👤 ***Kossi-Stack***
+
+- Location: Togo
+- GitHub: [@Kossi-stack](https://github.com/kossi-stack)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kossi-stack/)
 
 ## 🤝 Contributing
 

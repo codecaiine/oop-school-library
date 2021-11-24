@@ -1,15 +1,17 @@
 require_relative 'module_rental'
 require_relative 'module_person'
 require_relative 'module_book'
+require_relative 'preserve_data'
 # rubocop:disable Metrics
 
 class Menu
   attr_accessor :persons, :books
 
   def initialize
-    @persons = []
-    @books = []
-    @rentals = []
+    @storage = Storage.new
+    @persons = @storage.parse[:persons]
+    @books = @storage.parse[:books]
+    @rentals = @storage.parse[:rentals]
     @rental = ModuleRentals.new({ rentals: @rentals, persons: @persons, books: @books })
     @person = ModulePerson.new(@persons)
     @book = ModuleBooks.new(@books)
@@ -34,26 +36,33 @@ class Menu
     case options
     when 1
       @book.display_books
+      sleep 1
       menu
     when 2
       @person.display_person
+      sleep 1
       menu
     when 3
       puts 'Create a Person'
       @person.mod_person
+      sleep 1
       menu
     when 4
       puts 'Create a book'
       @book.add_book
+      sleep 1
       menu
     when 5
       @rental.add_rental
+      sleep 1
       menu
     when 6
       @rental.display_rental
+      sleep 1
       menu
     else
       puts 'Goodbye !'
+      @storage.stringify_data(@persons, @books, @rentals)
     end
   end
 end
