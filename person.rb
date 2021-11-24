@@ -1,14 +1,12 @@
-# rubocop: disable Style/OptionalBooleanParameter
-
 require './corrector'
 
 class Person
-  # variables
-  attr_accessor :name, :age, :rentals
-  attr_reader :id
+  attr_reader :id, :rentals
+  attr_accessor :name, :age
 
-  # constructor
-  def initialize(age, name = 'Unknown', parent_permission = true)
+  DEFAULT_BOOL = true
+
+  def initialize(age:, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -17,24 +15,21 @@ class Person
     @rentals = []
   end
 
-  def add_rental(date, book)
-    Rental.new(date, self, book)
-  end
-
-  def of_age?
-    @age >= 18
+  def validate_name
+    @name = @corrector.correct_name(@name)
   end
 
   def can_use_services?
-    of_age? || parent_permission == true
+    of_age || @parent_permission
   end
 
-  def validate_name
-    validate = @corrector
-    @name = validate.correct_name(@name)
+  private
+
+  def of_age
+    @age >= 18
   end
 
-  private :of_age?
+  def add_rental(rental)
+    @rentals << rental
+  end
 end
-
-# rubocop: enable Style/OptionalBooleanParameter
