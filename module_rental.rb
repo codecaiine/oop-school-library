@@ -30,7 +30,7 @@ class ModuleRentals
     print 'Date: '
     date = gets.chomp
 
-    @rentals.push(Rental.new(date: date, person: person, book: book))
+    @rentals.push(Rental.new(date, person, book))
     puts 'Rental has been created successfully'
   end
 
