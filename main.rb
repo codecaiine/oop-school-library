@@ -7,6 +7,7 @@ class Menu
   attr_accessor :persons, :books
 
   def initialize
+    @storage = Storage.new
     @persons = []
     @books = []
     @rentals = []
@@ -54,6 +55,7 @@ class Menu
       menu
     else
       puts 'Goodbye !'
+      @storage.stringify_data(@persons, @books, @rentals)
     end
   end
 end
