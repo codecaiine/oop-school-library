@@ -19,8 +19,4 @@ class Book
        'author' => @author
     }.to_json(*args)
   end
-
-  def self.json_create(object)
-    new(object['title'], object['author'])
-  end
 end

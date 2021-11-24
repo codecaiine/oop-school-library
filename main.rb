@@ -8,8 +8,8 @@ class Menu
 
   def initialize
     @storage = Storage.new
-    @persons = []
-    @books = []
+    @persons = @storage.parse['persons']
+    @books = @storage.parse['books']
     @rentals = []
     @rental = ModuleRentals.new({ rentals: @rentals, persons: @persons, books: @books })
     @person = ModulePerson.new(@persons)

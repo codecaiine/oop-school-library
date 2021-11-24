@@ -1,1 +1,4 @@
-[{ "json_class": "Book", "title": "Github", "author": "Codecaiine" }]
+[
+    [{ "json_class": "Book", "title": "Codecaiine", "author": "Yannick" }, { "json_class": "Book", "title": "Stack", "author": "Kossi" }],
+    []
+]
