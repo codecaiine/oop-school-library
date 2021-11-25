@@ -1,48 +1,30 @@
-require_relative '../rental'
-require_relative '../teacher'
-require_relative '../student'
-require_relative '../book'
-require_relative '../classroom'
+require_relative '../person'
+require_relative '../corrector'
 
-describe Rental do
+describe Person do
   before(:each) do
-    @book = Book.new(title: 'Harry Potter', author: 'RG Rowlings')
-    @classroom = Classroom.new('Maths')
-    @student = Student.new(age: 19, classroom: @classroom.label, name: 'Ali', parent_permission: false)
-    @teacher = Teacher.new(age: 45, specialization: 'Maths', name: 'Mr Rajesh')
-    @rental_a = Rental.new('2021/11/11', @student, @book)
-    @rental_b = Rental.new('2021/12/25', @teacher, @book)
+    @corrector = Corrector.new
+    @person = Person.new(age: 51, name: 'zinedine', parent_permission: false)
   end
 
-  it 'show rental instance' do
-    expect(@rental_a).to be_instance_of Rental
+  it ' show person instance' do
+    expect(@person).to be_instance_of Person
   end
 
-  it 'verify student rental date student' do
-    expect(@rental_a.date).to match '2021/11/11'
+  it 'name format is correct' do
+    expect(@person.validate_name).to match 'Zinedine'
   end
 
-  it 'verify person (student) who added a rental' do
-    expect(@rental_a.person).to be_instance_of Student
+  it 'name format is not correct' do
+    expect(@person.validate_name).not_to match 'zinedine'
   end
 
-  it 'verify teacher rental date ' do
-    expect(@rental_b.date).not_to match '2011/12/25'
+  it 'return use_services true' do
+    expect(@person.can_use_services?).to be true
   end
 
-  it 'verify person (teacher) who added a rental' do
-    expect(@rental_b.person).to be_instance_of Teacher
-  end
-
-  it 'expects students to be in rental array' do
-    expect(@student.rentals).to include @rental_a
-  end
-
-  it 'expects teacher to be in rental array' do
-    expect(@teacher.rentals).to include @rental_b
-  end
-
-  it 'expects book to be in rental array' do
-    expect(@book.rentals.size).to be 2
+  it 'return use_services false' do
+    person = Person.new(age: 16, name: 'zinedine', parent_permission: false)
+    expect(person.can_use_services?).to be false
   end
 end
