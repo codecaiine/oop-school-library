@@ -2,7 +2,7 @@ require_relative '../teacher'
 
 describe Teacher do
   before(:each) do
-    @teach = Teacher.new(age: 33, specialization: 'Geo', name: 'Mrs Aka')
+    @teach = Teacher.new(age: 33, specialization: 'History', name: 'Mrs Aka')
   end
 
   it ' show instance of teacher class' do
@@ -21,7 +21,7 @@ describe Teacher do
     expect(@teach.name).to match 'Mrs Aka'
   end
 
-  it 'confirms specialization of teacher to be Geo' do
-    expect(@teach.specialization).to match 'Geo'
+  it 'confirms specialization of teacher to be History' do
+    expect(@teach.specialization).to match 'History'
   end
 end
