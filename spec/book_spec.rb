@@ -1,19 +1,19 @@
-require_relative '../teacher'
+require_relative '../book'
 
-describe teacher do
-  it 'check teacher instance class' do
-    teacher = teacher.new
-    expect(teacher).to be_instance_of teacher
+describe Book do
+  before :each do
+    @book = Book.new(title: 'Spider Man', author: 'Marvel')
   end
 
-  it 'validate name to correct format' do
-    correct = teacher.new
-    name = 'yannick'
-    expect(correct.correct_name(name)).to match 'Yannick'
+  it 'show book instance' do
+    expect(@book).to be_instance_of Book
   end
 
-  it 'validate nil values' do
-    correct = teacher.new
-    expect(correct.correct_name('')).to eql ''
+  it 'confirm book title' do
+    expect(@book.title).to match 'Spider Man'
+  end
+
+  it 'confirm author si Marvel' do
+    expect(@book.author).to match 'Marvel'
   end
 end
