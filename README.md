@@ -1,6 +1,6 @@
 # School Library
 
-In this project, I will start building my school library app. In this initial step, I will implement the classes to represent students and teachers.We work with  data from the SpaceX API.
+In this project, I will start building my school library app. In this initial step, I will implement the classes to represent students and teachers.
 
 ## Built With
 - Ruby
@@ -25,6 +25,7 @@ Run ```gem install rspec```
 Run ```rspec spec``` 
 
 Run ```rspec spec/name_of_test_file.rb``` 
+
 ## Authors
 
 👤 **Yannick-Noel AKA**
@@ -37,7 +38,8 @@ Run ```rspec spec/name_of_test_file.rb```
 👤 **Kossi Fioklou**
 
 - Location: Togo
-- GitHub: [@codecaiine](https://github.com/Kossi-stack)
+- GitHub: [@Kossi-stack](https://github.com/kossi-stack)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kossi-stack/)
 
 ## 🤝 Contributing
 
