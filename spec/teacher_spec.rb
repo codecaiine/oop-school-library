@@ -1,19 +1,27 @@
 require_relative '../teacher'
 
-describe teacher do
-  it 'check teacher instance class' do
-    teacher = teacher.new
-    expect(teacher).to be_instance_of teacher
+describe Teacher do
+  before(:each) do
+    @teach = Teacher.new(age: 33, specialization: 'Geo', name: 'Mrs Aka')
   end
 
-  it 'validate name to correct format' do
-    correct = teacher.new
-    name = 'yannick'
-    expect(correct.correct_name(name)).to match 'Yannick'
+  it ' show instance of teacher class' do
+    expect(@teach).to be_instance_of Teacher
   end
 
-  it 'validate nil values' do
-    correct = teacher.new
-    expect(correct.correct_name('')).to eql ''
+  it 'show inheritance from person class' do
+    expect(@teach).to be_kind_of Person
+  end
+
+  it 'confirm age to be 33' do
+    expect(@teach.age).to eql 33
+  end
+
+  it 'confirm name not to be Mrs Aka' do
+    expect(@teach.name).to match 'Mrs Aka'
+  end
+
+  it 'confirms specialization of teacher to be Geo' do
+    expect(@teach.specialization).to match 'Geo'
   end
 end
