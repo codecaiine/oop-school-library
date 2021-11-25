@@ -1,14 +1,26 @@
-require_relative '../rental'
-require_relative '../teacher'
 require_relative '../student'
-require_relative '../book'
 require_relative '../classroom'
+require_relative '../person'
 
-describe student do
-    before(:each) do
-      @book = Book.new(title: 'Harry Potter', author: 'RG Rowlings')
-      @classroom = Classroom.new('Maths')
-      @student = Student.new(age: 19, classroom: @classroom.label, name: 'Ali', parent_permission: false)
-      @teacher = Teacher.new(age: 45, specialization: 'Maths', name: 'Mr Rajesh')
-    end
-    
+describe Student do
+  before(:each) do
+    @classroom = Classroom.new('Chemistry')
+    @student = Student.new(age: 19, classroom: @classroom.label, name: 'Ali', parent_permission: false)
+  end
+
+  it ' show student instance' do
+    expect(@student).to be_instance_of Student
+  end
+
+  it 'show student inheritance' do
+    expect(@student).to be_kind_of Person
+  end
+
+  it 'play_hooky not to be correct' do
+    expect(@student.play_hooky).not_to match '/()/'
+  end
+
+  it 'match classroom value' do
+    expect(@student.classroom).to eql @classroom.label
+  end
+end
