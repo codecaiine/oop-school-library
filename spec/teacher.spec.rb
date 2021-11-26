@@ -12,8 +12,5 @@ describe teacher do
     expect(correct.correct_name(name)).to match 'Yannick'
   end
 
-  it 'validate nil values' do
-    correct = teacher.new
-    expect(correct.correct_name('')).to eql ''
-  end
+  
 end
