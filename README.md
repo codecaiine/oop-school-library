@@ -8,7 +8,7 @@ In this project, I will start building my school library app. In this initial st
 - Rspec
 
 ## Getting Started
-Follow these steps below .
+Follow these steps below :
 
 ### Setup
 - ```git clone https://github.com/codecaiine/oop-school-library```
